@@ -1,4 +1,5 @@
-import { AuthStrategy } from "./strategies/auth-strategy";
+import { User } from '../domain/user';
+import { AuthStrategy } from './strategies/auth-strategy';
 
 export class AuthContext {
   private authStrategy: AuthStrategy;
@@ -11,7 +12,7 @@ export class AuthContext {
     this.authStrategy = authStrategy;
   }
 
-  login(email: string, password: string) {
-    return this.authStrategy.login(email, password);
+  auth(user: User): Promise<string> {
+    return this.authStrategy.auth(user);
   };
 }

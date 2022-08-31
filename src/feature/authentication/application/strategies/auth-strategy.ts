@@ -1,3 +1,5 @@
+import { User } from "../../domain/user";
+
 export interface AuthStrategy {
-  login(email: string, password: string): void;
+  auth(user: User): Promise<string>;
 }

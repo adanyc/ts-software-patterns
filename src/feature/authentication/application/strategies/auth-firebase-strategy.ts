@@ -1,5 +1,6 @@
-import { AuthRepository } from "../auth-repository";
-import { AuthStrategy } from "./auth-strategy";
+import { AuthRepository } from '../../domain/auth-repository';
+import { User } from '../../domain/user';
+import { AuthStrategy } from './auth-strategy';
 
 export class AuthFirebaseStrategy implements AuthStrategy {
   private authRepository: AuthRepository;
@@ -8,7 +9,7 @@ export class AuthFirebaseStrategy implements AuthStrategy {
     this.authRepository = authRepository;
   }
 
-  login(email: string, password: string): void {
-    this.authRepository.login(email, password);
+  auth(user: User): Promise<string> {
+    return this.authRepository.auth(user);
   }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "typescript-hexagonal-architecture",
+  "name": "@adanyc/typescript-software-patterns",
   "version": "1.0.0",
-  "description": "Hexagonal Architecture",
+  "description": "software patterns playground",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode development --open --port=4200"
